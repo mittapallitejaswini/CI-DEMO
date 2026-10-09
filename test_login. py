@@ -1,0 +1,32 @@
+
+import unittest
+from login import login
+
+class TestLogin(unittest.TestCase):
+
+    def test_valid_login(self):
+        self.assertEqual(
+            login("admin", "1234"),
+            "Login Successful - Welcome to Dashboard"
+        )
+
+    def test_invalid_password(self):
+        self.assertEqual(
+            login("admin", "wrong"),
+            "Invalid Username or Password"
+        )
+
+    def test_invalid_username(self):
+        self.assertEqual(
+            login("wrong", "1234"),
+            "Invalid Username or Password"
+        )
+
+    def test_empty_login(self):
+        self.assertEqual(
+            login("", ""),
+            "Invalid Username or Password"
+        )
+
+if __name__ == "__main__":
+    unittest.main()
