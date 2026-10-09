@@ -24,3 +24,7 @@ jobs:
       - name: Verify Output
         run: |
           python -c "assert 10 + 20 == 30"
+
+
+      - name: Run Login Tests
+        run: python -m unittest test_login.py -v
